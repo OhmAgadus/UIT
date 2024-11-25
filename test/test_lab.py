@@ -1,6 +1,6 @@
 import unittest
 from math import sin, cos, tan, asin, acos, atan, pi
-from UIT.Lab import calculate  # Імпортуємо функцію calculate з вашого проекту
+from Lab import calculate  # Імпортуємо функцію calculate з вашого проекту
 
 class TestCalculator(unittest.TestCase):
     
