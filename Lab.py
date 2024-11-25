@@ -1,5 +1,5 @@
 import tkinter as tk
-from math import sin, cos, tan, pi
+from math import sin, cos, tan, asin, acos, atan, pi
 
 def calculate(operation):
     try:
@@ -13,6 +13,14 @@ def calculate(operation):
             result = tan(value)
         elif operation == "ctg":
             result = 1 / tan(value) if tan(value) != 0 else "Undefined"
+        elif operation == "arcsin":
+            result = asin(value) if -1 <= value <= 1 else "Undefined"
+        elif operation == "arccos":
+            result = acos(value) if -1 <= value <= 1 else "Undefined"
+        elif operation == "arctg":
+            result = atan(value)
+        elif operation == "arcctg":
+            result = pi / 2 - atan(value)
         else:
             result = "Error"
         
@@ -23,7 +31,7 @@ def calculate(operation):
 # Головне вікно
 root = tk.Tk()
 root.title("Тригонометричний калькулятор")
-root.geometry("400x200")
+root.geometry("800x200")
 
 # Ввід
 entry_label = tk.Label(root, text="Введіть число:")
@@ -35,7 +43,7 @@ entry.pack()
 button_frame = tk.Frame(root)
 button_frame.pack(pady=10)
 
-operations = ["sin", "cos", "tg", "ctg"]
+operations = ["sin", "cos", "tg", "ctg", "arcsin", "arccos", "arctg", "arcctg"]
 for operation in operations:
     btn = tk.Button(button_frame, text=operation, width=10, 
                     command=lambda op=operation: calculate(op))
