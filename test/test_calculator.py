@@ -1,6 +1,7 @@
 import unittest
 from calculator import calculate
 from math import pi
+from xmlrunner import XMLTestRunner
 
 class TestCalculator(unittest.TestCase):
     def test_sin(self):
@@ -34,4 +35,6 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(calculate("invalid", 0), "Unsupported operation")
 
 if __name__ == "__main__":
-    unittest.main()
+    # Зберігаємо звіт у директорії test-reports
+    with open('test-reports/results.xml', 'wb') as output:
+        unittest.main(testRunner=XMLTestRunner(output=output))
