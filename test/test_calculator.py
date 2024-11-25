@@ -13,8 +13,8 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(calculate("tg", 0), 0)
 
     def test_ctg(self):
-        self.assertNotEqual(calculate("ctg", 0), "Undefined")
-        self.assertEqual(calculate("ctg", pi / 4), 1)
+        self.assertEqual(calculate("ctg", 0), "Undefined")
+        self.assertAlmostEqual(calculate("ctg", pi / 4), 1)
 
     def test_arcsin(self):
         self.assertAlmostEqual(calculate("arcsin", 0), 0)
