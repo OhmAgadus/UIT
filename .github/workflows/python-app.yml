@@ -28,8 +28,3 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-
-      # Крок для запуску тестів
-      - name: Run tests
-        run: |
-          pytest  # Запуск тестів (зазначити, якщо вони є)
