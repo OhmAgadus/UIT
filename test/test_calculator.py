@@ -11,7 +11,7 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(calculate("cos", 0), 1)
 
     def test_tg(self):
-        self.assertAlmostEqual(calculate("tg", 0), 0)
+        self.assertAlmostEqual(calculate("tg", 1), 0)
 
     def test_ctg(self):
         self.assertEqual(calculate("ctg", 0), "Undefined")
